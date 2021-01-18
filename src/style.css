@@ -63,7 +63,14 @@ h2{
   height: 300px;
   width: 185px;
 
+<<<<<<< HEAD
   margin: 20px;
+=======
+.pokeContainer1,
+.pokeContainer2{
+	position: relative;
+	z-index: -2;
+>>>>>>> 73d785d559e05c6f6f54894bb7b18a0bcadba035
 
   display: flex;
   flex-direction: column;
@@ -103,9 +110,17 @@ img{
   z-index: -1;
 }
 
+<<<<<<< HEAD
 .pokemon-nombre{
   font-weight: bold;
 }
+=======
+/*button {
+  margin-top: 10px;
+  margin-left: 30%;
+  margin
+}*/
+>>>>>>> 73d785d559e05c6f6f54894bb7b18a0bcadba035
 
 
 /*INICIA BOTON 01*/
