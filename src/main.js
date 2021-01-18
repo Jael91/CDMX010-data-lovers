@@ -1,38 +1,33 @@
 //import { example } from './data.js';
-//import data from './data/pokemon/pokemon.js';
+import data from './data/pokemon/pokemon.js';
+console.log(data);
 
-//import data from './data/pokemon/pokemon.js';
-import data from './pokemon/pokemon.js';
+// ESTA FUNCION CREA LAS TARJETAS DE CADA POKEMON DESDE JS ${pokemon.img}
+function createCard(pokemon) {
+  let card = `
+    <div class="pokemon-card">
+      <img src="" alt="">
+      <div class="circulo"></div>   
+      <h5 class="pokemon-id">${pokemon.id}</h5>
+      <h5 class="pokemon-nombre">${pokemon.name}</h5>
+      <h5 class="tipo">${pokemon.type}</h5>
+    </div>
+  `;
 
-console.log(data.pokemon);
-
-let card = document.getElementById('pokedexContainer1');
-let pokedex = document.getElementById('pokedexContainer2');
-
-let pokemonName = [];
-let pokemonNum = [];
-let pokemonImag = [];
-
-
-//imprimiendo en pantalla nombre del primer Pokemón
-const allPokemon = data.pokemon;
-let firstPokemon = allPokemon('name');
-console.log(firstPokemon)
-card.innerHTML = firstPokemon.name;
+  return card;
+};
 
 
+// ESTA FUNCION COLOCA INFORMACION DE CADA POKEMON DESDE JS 
+function setCards() {
+  let containerCards = document.getElementById('contenedor-pokemon');
+  let emptyCard = '';
+  data.pokemon.forEach(poke => emptyCard += createCard(poke));
 
+  containerCards.innerHTML = emptyCard;
+};
 
-const buttonStart = document.getElementById('btnStart');
-buttonStart.addEventListener('click', showNames);
+setCards();
 
-
-//imprimiendo en pantalla los nombres de todos los Pokémon
-function showNames() {
-  const allPokemon = data.pokemon;
-    for (let i = 0; i < allPokemon.length; i++) {
-    pokemonName[i] =  allPokemon[i].name;
-  }
-  console.log(pokemonName)
-  pokedex.innerHTML = pokemonName;
-}
+// tarea: domContentLoaded
+// tarea: window.addEventListener
